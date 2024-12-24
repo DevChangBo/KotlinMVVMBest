@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android-extensions'
+    id 'maven-publish'
 }
 
 android {
@@ -36,6 +37,24 @@ android {
     }
 
 }
+
+
+group='com.github.DevChangBo'
+version ='1.0.0'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId 'com.cb.mvvmbaselibrary'
+                artifactId 'CBMVVMBaseLibrary'
+                version '1.0.0'
+                // from components.release
+            }
+        }
+    }
+}
+
 
 dependencies {
 
