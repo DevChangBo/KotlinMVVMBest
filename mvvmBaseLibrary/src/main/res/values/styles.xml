@@ -7,10 +7,11 @@
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <!--状态栏图标颜色-->
+        <!--状态栏/字体颜色-->
         <item name="android:statusBarColor">@color/colorPrimary</item>
+
         <!--底部导航栏颜色-->
-        <item name="android:navigationBarColor">@color/colorPrimary</item>
+<!--        <item name="android:navigationBarColor">@color/colorPrimary</item>-->
         <!--阴影边界-->
         <item name="android:outlineProvider">background</item>
         <!--window背景-->
@@ -25,8 +26,7 @@
     </style>
 
     <style name="AppTheme" parent="BaseAppTheme">
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="SplashTheme" parent="AppTheme">

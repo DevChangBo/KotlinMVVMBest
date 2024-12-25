@@ -6,6 +6,10 @@ import com.cb.mvvmbaselibrary.core.CoilHelper
 import com.cb.mvvmbaselibrary.core.DayNightHelper
 import com.cb.mvvmbaselibrary.loadmore.LoadMoreHelper
 import com.cb.mvvmbaselibrary.util.isMainProcess
+import skin.support.SkinCompatManager
+import skin.support.app.SkinAppCompatViewInflater
+import skin.support.constraint.app.SkinConstraintViewInflater
+import skin.support.design.app.SkinMaterialViewInflater
 
 /**
  * @author Mr.常
@@ -30,7 +34,12 @@ class App : Application() {
         LoadMoreHelper.init()
         CoilHelper.init(this)
         ActivityHelper.init(this)
-        DayNightHelper.init()
+        SkinCompatManager.withoutActivity(this)
+            .addInflater(SkinAppCompatViewInflater())
+            .addInflater(SkinConstraintViewInflater())
+            .addInflater(SkinMaterialViewInflater())
+            .loadSkin()
+//        DayNightHelper.init()
     }
 
 }
