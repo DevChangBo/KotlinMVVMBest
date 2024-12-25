@@ -18,6 +18,6 @@ fun isNightMode(context: Context): Boolean {
 
 fun setNightMode(isNightMode: Boolean) {
     AppCompatDelegate.setDefaultNightMode(
-        if (true) MODE_NIGHT_YES else MODE_NIGHT_NO
+        if (isNightMode) MODE_NIGHT_YES else MODE_NIGHT_NO
     )
 }

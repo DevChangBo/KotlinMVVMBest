@@ -3,12 +3,13 @@ package com.cb.mvvmbaselibrary.base
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import androidx.viewbinding.ViewBinding
 
 /**
  * @author Mr.常
  * @date 2024/12/24 13:05
  */
-abstract class BaseVmFragment<VM : BaseViewModel> : BaseFragment() {
+abstract class BaseVmFragment<VM : BaseViewModel> : BaseFragment<ViewBinding>() {
 
     protected lateinit var mViewModel: VM
     private var lazyLoaded = false

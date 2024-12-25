@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
+import androidx.viewbinding.ViewBinding
 import com.cb.mvvmbaselibrary.R
+import com.cb.mvvmbaselibrary.databinding.FragmentProgressDialogBinding
 
 /**
  * @author Mr.常
@@ -16,7 +18,7 @@ import com.cb.mvvmbaselibrary.R
 class ProgressDialogFragment : DialogFragment() {
 
     private var messageResId: Int? = null
-
+    private lateinit var binding:FragmentProgressDialogBinding
     companion object {
         fun newInstance() =
             ProgressDialogFragment()
@@ -27,12 +29,15 @@ class ProgressDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_progress_dialog, container, false)
+        binding= FragmentProgressDialogBinding.inflate(layoutInflater)
+        return binding.root
+//        return inflater.inflate(R.layout.fragment_progress_dialog, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        tvMessage.text = getString(messageResId ?: R.string.loading)
+        binding.tvMessage.text=getString(messageResId?: R.string.loading)
     }
 
     fun show(
@@ -49,4 +54,8 @@ class ProgressDialogFragment : DialogFragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding==null
+    }
 }

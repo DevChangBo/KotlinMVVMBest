@@ -1,24 +1,29 @@
 package com.cb.mvvmbaselibrary.base
 
 import android.os.Bundle
+import android.widget.SimpleAdapter.ViewBinder
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
 import com.cb.mvvmbaselibrary.dialog.ProgressDialogFragment
 
 /**
  * @author Mr.常
  * @date 2024/12/23 9:30
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
     private lateinit var progressDialogFragment: ProgressDialogFragment
+    protected lateinit var binding: VB
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layoutRes())
+        binding = initViewBinding()
+        setContentView(binding.root)
     }
 
-    open fun layoutRes() = 0
+
+    protected abstract fun initViewBinding(): VB
 
     /**
      * 显示加载(转圈)对话框
@@ -41,4 +46,8 @@ abstract class BaseActivity : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        binding == null
+    }
 }

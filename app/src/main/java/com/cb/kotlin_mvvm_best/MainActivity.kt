@@ -2,17 +2,18 @@ package com.cb.kotlin_mvvm_best
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import com.cb.kotlin_mvvm_best.databinding.ActivityMainBinding
 import com.cb.mvvmbaselibrary.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_main.tv_message
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    override fun layoutRes(): Int {
-        return R.layout.activity_main
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        tv_message.text = "Hello World!!!!!"
+        binding.tvMessage.text = "Hello World!!!!!"
+    }
+
+    override fun initViewBinding(): ActivityMainBinding {
+        return ActivityMainBinding.inflate(layoutInflater)
     }
 }
 
