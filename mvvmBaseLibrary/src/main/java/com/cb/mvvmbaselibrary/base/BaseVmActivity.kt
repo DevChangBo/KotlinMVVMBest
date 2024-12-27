@@ -8,7 +8,7 @@ import androidx.viewbinding.ViewBinding
  * @author Mr.常
  * @date 2024/12/24 9:30
  */
-abstract class BaseVmActivity<VM : BaseViewModel> : BaseActivity<ViewBinding>() {
+abstract class BaseVmActivity<VM : BaseViewModel,VB : ViewBinding> : BaseActivity<VB>() {
 
     protected open lateinit var mViewModel: VM
 

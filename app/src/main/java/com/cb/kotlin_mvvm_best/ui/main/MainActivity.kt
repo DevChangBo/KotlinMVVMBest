@@ -1,10 +1,12 @@
-package com.cb.kotlin_mvvm_best
+package com.cb.kotlin_mvvm_best.ui.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import com.cb.kotlin_mvvm_best.databinding.ActivityMainBinding
 import com.cb.mvvmbaselibrary.base.BaseActivity
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+import com.cb.mvvmbaselibrary.base.BaseVmActivity
+
+class MainActivity : BaseVmActivity<MainViewModel,ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,8 +23,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 
+    override fun viewModelClass() =MainViewModel::class.java
+
     override fun initViewBinding(): ActivityMainBinding {
         return ActivityMainBinding.inflate(layoutInflater)
+    }
+
+    override fun observe() {
+        super.observe()
     }
 }
 

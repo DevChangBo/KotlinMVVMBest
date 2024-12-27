@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding
  * @author Mr.常
  * @date 2024/12/24 13:05
  */
-abstract class BaseVmFragment<VM : BaseViewModel> : BaseFragment<ViewBinding>() {
+abstract class BaseVmFragment<VM : BaseViewModel,VB : ViewBinding> : BaseFragment<VB>() {
 
     protected lateinit var mViewModel: VM
     private var lazyLoaded = false
