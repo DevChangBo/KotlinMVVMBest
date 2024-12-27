@@ -45,7 +45,7 @@ android {
 
 
 group='com.github.DevChangBo'
-version ='1.0.3'
+version ='1.0.4'
 afterEvaluate {
     publishing {
         publications {
@@ -53,7 +53,7 @@ afterEvaluate {
                 from components.release
                 groupId 'com.cb.mvvmbaselibrary'
                 artifactId 'CBMVVMBaseLibrary'
-                version '1.0.3'
+                version '1.0.4'
                 // from components.release
             }
         }

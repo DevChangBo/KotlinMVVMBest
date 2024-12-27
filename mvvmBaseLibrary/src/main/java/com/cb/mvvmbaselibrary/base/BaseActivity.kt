@@ -15,7 +15,7 @@ import skin.support.SkinCompatManager
  * @date 2024/12/23 9:30
  */
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
-
+    protected val TAG:String=javaClass.name
     private lateinit var progressDialogFragment: ProgressDialogFragment
     protected lateinit var binding: VB
 

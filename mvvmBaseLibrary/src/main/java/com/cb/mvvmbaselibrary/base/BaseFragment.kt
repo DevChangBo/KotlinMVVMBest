@@ -13,6 +13,7 @@ import androidx.viewbinding.ViewBinding
  * @date 2024/12/23 12:37
  */
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
+    protected val TAG:String=javaClass.name
     protected lateinit var binding: VB
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = initViewBinding()

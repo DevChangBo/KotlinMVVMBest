@@ -15,7 +15,7 @@ import skin.support.design.app.SkinMaterialViewInflater
  * @author Mr.常
  * @date 2024/12/23 9:37
  */
-class App : Application() {
+open class App : Application() {
 
     companion object {
         lateinit var instance: App

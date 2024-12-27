@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import com.cb.kotlin_mvvm_best.databinding.ActivityMainBinding
 import com.cb.mvvmbaselibrary.base.BaseActivity
 import com.cb.mvvmbaselibrary.base.BaseVmActivity
+import com.cb.mvvmbaselibrary.core.Logger
 
 class MainActivity : BaseVmActivity<MainViewModel,ActivityMainBinding>() {
 
@@ -21,6 +22,8 @@ class MainActivity : BaseVmActivity<MainViewModel,ActivityMainBinding>() {
         binding.btnGreen.setOnClickListener {
             setDayNightMode(2)
         }
+        Logger.d(TAG, "111111111111111111111111111111111111111")
+        Logger.d(TAG, "222222222222222222222222222222222222222")
     }
 
     override fun viewModelClass() =MainViewModel::class.java

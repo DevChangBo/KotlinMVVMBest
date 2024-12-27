@@ -4,7 +4,7 @@
     package="com.cb.kotlin_mvvm_best">
 
     <application
-        android:name="com.cb.mvvmbaselibrary.App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
