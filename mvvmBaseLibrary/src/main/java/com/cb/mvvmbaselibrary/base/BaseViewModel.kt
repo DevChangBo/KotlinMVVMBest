@@ -30,7 +30,7 @@ typealias Cancel = suspend (Exception) -> Unit
  * @date 2024/12/23 13:05
  */
 open class BaseViewModel : ViewModel() {
-
+    protected val TAG:String=javaClass.name
     val loginStatusInvalid: MutableLiveData<Boolean> = MutableLiveData()
 
     /**

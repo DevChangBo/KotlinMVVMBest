@@ -24,6 +24,7 @@ class MainActivity : BaseVmActivity<MainViewModel,ActivityMainBinding>() {
         }
         Logger.d(TAG, "111111111111111111111111111111111111111")
         Logger.d(TAG, "222222222222222222222222222222222222222")
+        mViewModel.TestLogger()
     }
 
     override fun viewModelClass() =MainViewModel::class.java
