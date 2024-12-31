@@ -16,6 +16,11 @@ android {
   
     }
 
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res', 'src/main/res-night','src/main/res-green']
+        }
+    }
 
     buildTypes {
         release {
@@ -50,5 +55,4 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation project(':mvvmBaseLibrary')
-//    implementation project(':themeLibrary')
 }

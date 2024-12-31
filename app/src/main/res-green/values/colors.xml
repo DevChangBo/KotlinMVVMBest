@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary_green">#7C7B7B</color>
+    <color name="colorAccent_green">#B1B1B1</color>
+
+    <color name="textColorPrimary_green">#B1B1B1</color>
+    <color name="textColorSecondary_green">#7C7B7B</color>
+    <color name="textColorThird_green">#5E5E5E</color>
+
+    <color name="bgColorPrimary_green">#C7EDCC</color>
+    <color name="bgColorSecondary_green">#292929</color>
+    <color name="bgColorThird_green">#262626</color>
+
+    <color name="colorRipple_green">#7C7B7B</color>
+    <color name="colorBadge_green">#F44336</color>
+</resources>
