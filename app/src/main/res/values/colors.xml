@@ -22,4 +22,24 @@
 
     <color name="colorRipple">#E2E2E2</color>
     <color name="colorBadge">#FC1603</color>
+
+    <!--APP自定义颜色-->
+    <!--APP标题栏颜色-->
+    <color name="bgHeaderColorPrimary">#3388ef</color>
+    <color name="HeaderColorAccent">#FFFFFF</color>
+    <!--APP页面背景主题颜色-->
+    <color name="bgColorTitle">#FFFFFF</color>
+    <color name="bgColorBewrite">#F8F8F8</color>
+    <!--APP字体颜色-->
+    <color name="textColorTitle">#1B1B1D</color>
+    <color name="textColorBewrite">#6B7178</color>
+    <color name="textColorblue_white">#3388ef</color>
+    <!--APP按钮背景颜色-->
+    <color name="buttonBgColorTitle">#3388ef</color>
+    <color name="buttonBgColorBewrite">#2577e0</color>
+    <!--警告框相关颜色-->
+    <color name="dialogBgColorPrimary">#FFFFFF</color>
+    <color name="dialogBgColorSecondary">#F8F8F8</color>
+
+    <color name="edit_bg_Color">#9297A2</color>
 </resources>

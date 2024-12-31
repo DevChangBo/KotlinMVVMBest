@@ -13,4 +13,24 @@
 
     <color name="colorRipple_green">#7C7B7B</color>
     <color name="colorBadge_green">#F44336</color>
+
+    <!--APP自定义颜色-->
+    <!--APP标题栏颜色-->
+    <color name="bgHeaderColorPrimary_green">#C7EDCC</color>
+    <color name="HeaderColorAccent_green">#FFFFFF</color>
+    <!--APP页面背景主题颜色-->
+    <color name="bgColorTitle_green">#C7EDCC</color>
+    <color name="bgColorBewrite_green">#F8F8F8</color>
+    <!--APP字体颜色-->
+    <color name="textColorTitle_green">#1B1B1D</color>
+    <color name="textColorBewrite_green">#6B7178</color>
+    <color name="textColorblue_white_green">#3388ef</color>
+    <!--APP按钮背景颜色-->
+    <color name="buttonBgColorTitle_green">#3388ef</color>
+    <color name="buttonBgColorBewrite_green">#2577e0</color>
+    <!--警告框相关颜色-->
+    <color name="dialogBgColorPrimary_green">#C7EDCC</color>
+    <color name="dialogBgColorSecondary_green">#F8F8F8</color>
+
+    <color name="edit_bg_Color_green">#9297A2</color>
 </resources>

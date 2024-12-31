@@ -13,4 +13,24 @@
 
     <color name="colorRipple_night">#3F3F3F</color>
     <color name="colorBadge_night">#F44336</color>
+
+    <!--APP自定义颜色-->
+    <!--APP标题栏颜色-->
+    <color name="bgHeaderColorPrimary_night">#303030</color>
+    <color name="HeaderColorAccent_night">#FFFFFF</color>
+    <!--APP页面背景主题颜色-->
+    <color name="bgColorTitle_night">#303030</color>
+    <color name="bgColorBewrite_night">#292929</color>
+    <!--APP字体颜色-->
+    <color name="textColorTitle_night">#FFFFFF</color>
+    <color name="textColorBewrite_night">#B1B1B1</color>
+    <color name="textColorblue_white_night">#3388ef</color>
+    <!--APP按钮背景颜色-->
+    <color name="buttonBgColorTitle_night">#3388ef</color>
+    <color name="buttonBgColorBewrite_night">#2577e0</color>
+    <!--警告框相关颜色-->
+    <color name="dialogBgColorPrimary_night">#303030</color>
+    <color name="dialogBgColorSecondary_night">#292929</color>
+
+    <color name="edit_bg_Color_night">#FFFFFF</color>
 </resources>
