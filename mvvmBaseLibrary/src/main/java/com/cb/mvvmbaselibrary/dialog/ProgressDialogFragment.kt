@@ -56,6 +56,5 @@ class ProgressDialogFragment : DialogFragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding==null
     }
 }
