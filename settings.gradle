@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 rootProject.name = "Kotlin-MVVM-Best"
 include(":app")
 include(":mvvmBaseLibrary")
-include ':themeLibrary'
