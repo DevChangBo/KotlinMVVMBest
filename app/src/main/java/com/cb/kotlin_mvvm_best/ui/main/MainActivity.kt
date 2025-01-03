@@ -4,6 +4,8 @@ import android.os.Bundle
 import com.cb.kotlin_mvvm_best.databinding.ActivityMainBinding
 import com.cb.mvvmbaselibrary.base.BaseVmActivity
 import com.cb.mvvmbaselibrary.core.Logger
+import com.cb.mvvmbaselibrary.core.getSpValue
+import com.cb.mvvmbaselibrary.core.putSpValue
 import com.cb.mvvmbaselibrary.dialog.WarmingDialog
 import com.cb.mvvmbaselibrary.listeners.OnClickListener
 
@@ -33,8 +35,10 @@ class MainActivity : BaseVmActivity<MainViewModel,ActivityMainBinding>() {
                 }
             }).show()
         }
-        Logger.d(TAG, "111111111111111111111111111111111111111")
+        putSpValue("test","正在测试，请稍后")
+        Logger.d(TAG, "111111111111111111111111111111111111111${getSpValue("test","")}")
         Logger.d(TAG, "222222222222222222222222222222222222222")
+
         mViewModel.TestLogger()
     }
 

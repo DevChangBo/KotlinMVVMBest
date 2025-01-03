@@ -3,6 +3,7 @@
 package com.cb.mvvmbaselibrary.core
 
 import android.content.Context
+import android.preference.PreferenceManager
 import com.cb.mvvmbaselibrary.App
 
 
@@ -10,6 +11,7 @@ import com.cb.mvvmbaselibrary.App
  * @author Mr.常
  * @date 2024/12/18 9:37
  */
+
 private const val SP_CBMVVM = "sp_cbmvvm"
 
 @JvmOverloads
