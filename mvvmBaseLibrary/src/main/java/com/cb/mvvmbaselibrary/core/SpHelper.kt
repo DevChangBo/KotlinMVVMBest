@@ -3,22 +3,21 @@
 package com.cb.mvvmbaselibrary.core
 
 import android.content.Context
+import com.cb.mvvmbaselibrary.App
 
 
 /**
  * @author Mr.常
  * @date 2024/12/18 9:37
  */
-private const val SP_WANANDROID = "sp_wanandroid"
+private const val SP_CBMVVM = "sp_cbmvvm"
 
 @JvmOverloads
 fun <T> getSpValue(
-    filename: String = SP_WANANDROID,
-    context: Context,
     key: String,
     defaultVal: T
 ): T {
-    val sp = context.getSharedPreferences(filename, Context.MODE_PRIVATE)
+    val sp = App.instance.getSharedPreferences(SP_CBMVVM, Context.MODE_PRIVATE)
     return when (defaultVal) {
         is Boolean -> sp.getBoolean(key, defaultVal) as T
         is String -> sp.getString(key, defaultVal) as T
@@ -32,12 +31,10 @@ fun <T> getSpValue(
 
 @JvmOverloads
 fun <T> putSpValue(
-    filename: String = SP_WANANDROID,
-    context: Context,
     key: String,
     value: T
 ) {
-    val editor = context.getSharedPreferences(filename, Context.MODE_PRIVATE).edit()
+    val editor = App.instance.getSharedPreferences(SP_CBMVVM, Context.MODE_PRIVATE).edit()
     when (value) {
         is Boolean -> editor.putBoolean(key, value)
         is String -> editor.putString(key, value)
@@ -51,7 +48,7 @@ fun <T> putSpValue(
 }
 
 @JvmOverloads
-fun removeSpValue(filename: String = SP_WANANDROID, context: Context, key: String) {
+fun removeSpValue(filename: String = SP_CBMVVM, context: Context, key: String) {
     context.getSharedPreferences(filename, Context.MODE_PRIVATE)
         .edit()
         .remove(key)
@@ -59,7 +56,7 @@ fun removeSpValue(filename: String = SP_WANANDROID, context: Context, key: Strin
 }
 
 @JvmOverloads
-fun clearSpValue(filename: String = SP_WANANDROID, context: Context) {
+fun clearSpValue(filename: String = SP_CBMVVM, context: Context) {
     context.getSharedPreferences(filename, Context.MODE_PRIVATE)
         .edit()
         .clear()
