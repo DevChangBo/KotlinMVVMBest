@@ -1,9 +1,6 @@
-@file:Suppress("UNCHECKED_CAST")
-
 package com.cb.mvvmbaselibrary.core
 
 import android.content.Context
-import android.preference.PreferenceManager
 import com.cb.mvvmbaselibrary.App
 
 
@@ -14,7 +11,6 @@ import com.cb.mvvmbaselibrary.App
 
 private const val SP_CBMVVM = "sp_cbmvvm"
 
-@JvmOverloads
 fun <T> getSpValue(
     key: String,
     defaultVal: T
@@ -31,7 +27,7 @@ fun <T> getSpValue(
     }
 }
 
-@JvmOverloads
+
 fun <T> putSpValue(
     key: String,
     value: T
@@ -49,7 +45,7 @@ fun <T> putSpValue(
     editor.apply()
 }
 
-@JvmOverloads
+
 fun removeSpValue(filename: String = SP_CBMVVM, context: Context, key: String) {
     context.getSharedPreferences(filename, Context.MODE_PRIVATE)
         .edit()
@@ -57,7 +53,7 @@ fun removeSpValue(filename: String = SP_CBMVVM, context: Context, key: String) {
         .apply()
 }
 
-@JvmOverloads
+
 fun clearSpValue(filename: String = SP_CBMVVM, context: Context) {
     context.getSharedPreferences(filename, Context.MODE_PRIVATE)
         .edit()

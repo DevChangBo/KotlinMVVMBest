@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.cb.kotlin_mvvm_best.databinding.ActivityMainBinding
 import com.cb.mvvmbaselibrary.base.BaseVmActivity
 import com.cb.mvvmbaselibrary.core.Logger
+import com.cb.mvvmbaselibrary.core.getSpValue
 import com.cb.mvvmbaselibrary.core.putSpValue
 import com.cb.mvvmbaselibrary.dialog.WarmingDialog
 import com.cb.mvvmbaselibrary.listeners.OnClickListener
@@ -40,7 +41,7 @@ class MainActivity : BaseVmActivity<MainViewModel, ActivityMainBinding>() {
             builder.append("123456879")
             WarmingDialog(this, builder.toString(), "", true, object : OnClickListener {
                 override fun Onclick(position: Int, state: Int, flag: Boolean) {
-                    Logger.d(TAG, "444444444444444444444444")
+                    Logger.d(TAG, "444444444444444444444444${getSpValue("test","0")}")
                 }
             }).show()
         }

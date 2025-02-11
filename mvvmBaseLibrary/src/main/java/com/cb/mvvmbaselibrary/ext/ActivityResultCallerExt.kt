@@ -81,8 +81,8 @@ fun ActivityResultCaller.requestMultiplePermissions(
         registerForActivityResult(RequestMultiplePermissions()) { result ->
             callback.invoke(result as MutableMap<String, Boolean>)
             launcher?.unregister()
-        } as ActivityResultLauncher<Array<out String>>
-    launcher.launch(permissions)
+        } as? ActivityResultLauncher<Array<out String>>
+    launcher!!.launch(permissions)
 }
 
 /**
@@ -97,8 +97,8 @@ suspend fun ActivityResultCaller.requestMultiplePermissions(
             registerForActivityResult(RequestMultiplePermissions()) { result ->
                 continuation.resume(result as MutableMap<String, Boolean>)
                 launcher?.unregister()
-            }as ActivityResultLauncher<Array<out String>>
-        launcher.launch(permissions)
+            }as? ActivityResultLauncher<Array<out String>>
+        launcher!!.launch(permissions)
     }
 }
 

@@ -23,7 +23,7 @@ class WarmingDialog : Dialog {
     var text: String
     var okText: String? = null
     var cancelText: String? = null
-    private lateinit var binding: WarmingDialogBinding
+    private var binding: WarmingDialogBinding
 
     /**
      * 只带确定 按钮的提示框.没有回调（标题，按钮文字 采用默认名称）
@@ -133,9 +133,7 @@ class WarmingDialog : Dialog {
         } else {
             binding.btDialogCancel.visibility = View.VISIBLE
         }
-        if (null!=title){
-            binding.tvDialogTitle.text = title
-        }
+        binding.tvDialogTitle.text = title
         if (null!=text){
             binding.tvDialogText.text = text
         }
@@ -145,21 +143,13 @@ class WarmingDialog : Dialog {
         if (null!=okText&&!TextUtils.isEmpty(okText)){
             binding.btDialogOk.text = okText
         }
-        if (null!=cancelable){
-            setCancelable(cancelable)
-        }
+        setCancelable(cancelable)
         binding.btDialogOk.setOnClickListener {
-            Logger.d("TAG", "111111111111111")
-            if (lister != null) {
-                Logger.d("TAG", "22222222222")
-                lister!!.Onclick(1, 1,  true)
-            }
+            lister.Onclick(1, 1,  true)
             dismiss()
         }
         binding.btDialogCancel.setOnClickListener {
-            if (lister != null) {
-                lister!!.Onclick(1, 1,  false)
-            }
+            lister.Onclick(1, 1,  false)
             dismiss()
         }
     }
