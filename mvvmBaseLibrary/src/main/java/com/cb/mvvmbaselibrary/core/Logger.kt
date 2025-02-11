@@ -1,10 +1,7 @@
 package com.cb.mvvmbaselibrary.core
 
-import android.app.Application
-import android.content.Context
+
 import android.util.Log
-import com.cb.mvvmbaselibrary.BuildConfig
-import com.cb.mvvmbaselibrary.simple.ActivityLifecycleCallbacksAdapter
 
 object Logger {
     private const val defaultTag = "Logger"

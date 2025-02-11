@@ -35,8 +35,9 @@ open class App : Application() {
         CoilHelper.init(this)
         ActivityHelper.init(this)
         SkinCompatManager.withoutActivity(this)
-            .addInflater(SkinAppCompatViewInflater())
-            .addInflater(SkinConstraintViewInflater())
+            .addInflater(SkinMaterialViewInflater()) // material design 控件换肤初始化[可选]
+            .addInflater(SkinAppCompatViewInflater())// 基础控件换肤初始化
+            .addInflater(SkinConstraintViewInflater())// ConstraintLayout 控件换肤初始化[可选]
             .addInflater(SkinMaterialViewInflater())
             .loadSkin()
 //        DayNightHelper.init()
