@@ -20,7 +20,6 @@ class MainActivity : BaseVmActivity<MainViewModel, ActivityMainBinding>() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding.btnDefault.setOnClickListener {
             setDayNightMode(0)
         }
