@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace "com.cb.mvvmbaselibrary"
-    compileSdk 30
+    compileSdk 31
     defaultConfig {
         minSdk 24
 
@@ -38,7 +38,7 @@ android {
 
 
 group='com.github.DevChangBo'
-version ='1.0.20'
+version ='1.0.21'
 afterEvaluate {
     publishing {
         publications {
@@ -46,7 +46,7 @@ afterEvaluate {
                 from components.release
                 groupId 'com.cb.mvvmbaselibrary'
                 artifactId 'CBMVVMBaseLibrary'
-                version '1.0.20'
+                version '1.0.21'
                 // from components.release
             }
         }
