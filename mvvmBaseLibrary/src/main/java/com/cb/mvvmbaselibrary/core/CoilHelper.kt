@@ -1,8 +1,12 @@
 package com.cb.mvvmbaselibrary.core
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Build
 import android.widget.ImageView
+import androidx.annotation.DrawableRes
 import androidx.lifecycle.Lifecycle
 import coil.Coil
 import coil.ImageLoader
@@ -16,6 +20,7 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import coil.util.CoilUtils
 import okhttp3.OkHttpClient
+import java.io.File
 
 object CoilHelper {
 
@@ -46,6 +51,162 @@ object CoilHelper {
 fun ImageView.load(
     lifecycle: Lifecycle? = null,
     url: String? = null,
+    placeholder: Int = 0,
+    fallback: Int = 0,
+    error: Int = 0,
+    circleCrop: Boolean = false,
+    cornerRadius: Float = 0f,
+) {
+    this.load(url, context.imageLoader) {
+        if (lifecycle != null) {
+            lifecycle(lifecycle)
+        }
+        if (placeholder != 0) {
+            placeholder(placeholder)
+        }
+        if (fallback != 0) {
+            fallback(fallback)
+        }
+        if (error != 0) {
+            error(error)
+        }
+        if (circleCrop) {
+            transformations(CircleCropTransformation())
+        }
+        if (cornerRadius > 0) {
+            transformations(coil.transform.RoundedCornersTransformation(cornerRadius))
+        }
+    }
+}
+
+fun ImageView.load(
+    lifecycle: Lifecycle? = null,
+    url: File? = null,
+    placeholder: Int = 0,
+    fallback: Int = 0,
+    error: Int = 0,
+    circleCrop: Boolean = false,
+    cornerRadius: Float = 0f,
+) {
+    this.load(url, context.imageLoader) {
+        if (lifecycle != null) {
+            lifecycle(lifecycle)
+        }
+        if (placeholder != 0) {
+            placeholder(placeholder)
+        }
+        if (fallback != 0) {
+            fallback(fallback)
+        }
+        if (error != 0) {
+            error(error)
+        }
+        if (circleCrop) {
+            transformations(CircleCropTransformation())
+        }
+        if (cornerRadius > 0) {
+            transformations(coil.transform.RoundedCornersTransformation(cornerRadius))
+        }
+    }
+}
+
+fun ImageView.load(
+    lifecycle: Lifecycle? = null,
+    url: Uri? = null,
+    placeholder: Int = 0,
+    fallback: Int = 0,
+    error: Int = 0,
+    circleCrop: Boolean = false,
+    cornerRadius: Float = 0f,
+) {
+    this.load(url, context.imageLoader) {
+        if (lifecycle != null) {
+            lifecycle(lifecycle)
+        }
+        if (placeholder != 0) {
+            placeholder(placeholder)
+        }
+        if (fallback != 0) {
+            fallback(fallback)
+        }
+        if (error != 0) {
+            error(error)
+        }
+        if (circleCrop) {
+            transformations(CircleCropTransformation())
+        }
+        if (cornerRadius > 0) {
+            transformations(coil.transform.RoundedCornersTransformation(cornerRadius))
+        }
+    }
+}
+
+
+fun ImageView.load(
+    lifecycle: Lifecycle? = null,
+    @DrawableRes url: Int,
+    placeholder: Int = 0,
+    fallback: Int = 0,
+    error: Int = 0,
+    circleCrop: Boolean = false,
+    cornerRadius: Float = 0f,
+) {
+    this.load(url, context.imageLoader) {
+        if (lifecycle != null) {
+            lifecycle(lifecycle)
+        }
+        if (placeholder != 0) {
+            placeholder(placeholder)
+        }
+        if (fallback != 0) {
+            fallback(fallback)
+        }
+        if (error != 0) {
+            error(error)
+        }
+        if (circleCrop) {
+            transformations(CircleCropTransformation())
+        }
+        if (cornerRadius > 0) {
+            transformations(coil.transform.RoundedCornersTransformation(cornerRadius))
+        }
+    }
+}
+
+fun ImageView.load(
+    lifecycle: Lifecycle? = null,
+    url: Drawable? = null,
+    placeholder: Int = 0,
+    fallback: Int = 0,
+    error: Int = 0,
+    circleCrop: Boolean = false,
+    cornerRadius: Float = 0f,
+) {
+    this.load(url, context.imageLoader) {
+        if (lifecycle != null) {
+            lifecycle(lifecycle)
+        }
+        if (placeholder != 0) {
+            placeholder(placeholder)
+        }
+        if (fallback != 0) {
+            fallback(fallback)
+        }
+        if (error != 0) {
+            error(error)
+        }
+        if (circleCrop) {
+            transformations(CircleCropTransformation())
+        }
+        if (cornerRadius > 0) {
+            transformations(coil.transform.RoundedCornersTransformation(cornerRadius))
+        }
+    }
+}
+
+fun ImageView.load(
+    lifecycle: Lifecycle? = null,
+    url: Bitmap? = null,
     placeholder: Int = 0,
     fallback: Int = 0,
     error: Int = 0,
