@@ -1,6 +1,8 @@
 package com.cb.mvvmbaselibrary.dialog
 
+import android.app.Dialog
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,6 +42,19 @@ class ProgressDialogFragment : DialogFragment() {
         binding.tvMessage.text=getString(messageResId?: R.string.loading)
     }
 
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        return super.onCreateDialog(savedInstanceState).apply {
+            setOnKeyListener { _, keyCode, event ->
+                if (keyCode == KeyEvent.KEYCODE_BACK && event.action == KeyEvent.ACTION_UP) {
+                    dismiss()
+                    true  // 消费返回键事件
+                } else {
+                    false // 其他按键不处理
+                }
+            }
+        }
+    }
+
     fun show(
         fragmentManager: FragmentManager,
         @StringRes messageResId: Int,
@@ -53,6 +68,8 @@ class ProgressDialogFragment : DialogFragment() {
             e.printStackTrace()
         }
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

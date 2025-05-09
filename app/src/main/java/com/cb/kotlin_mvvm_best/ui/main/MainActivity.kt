@@ -9,6 +9,7 @@ import com.cb.mvvmbaselibrary.core.getSpValue
 import com.cb.mvvmbaselibrary.core.putSpValue
 import com.cb.mvvmbaselibrary.dialog.WarmingDialog
 import com.cb.mvvmbaselibrary.listeners.OnClickListener
+import skin.support.SkinCompatManager
 
 
 class MainActivity : BaseVmActivity<MainViewModel, ActivityMainBinding>() {
@@ -21,17 +22,23 @@ class MainActivity : BaseVmActivity<MainViewModel, ActivityMainBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.btnDefault.setOnClickListener {
-            setDayNightMode(0)
+//            setDayNightMode(0)
+            SkinCompatManager.getInstance().restoreDefaultTheme()
         }
         binding.btnNight.setOnClickListener {
-            setDayNightMode(1)
+//            setDayNightMode(1)
+            SkinCompatManager.getInstance().loadSkin("night", SkinCompatManager.SKIN_LOADER_STRATEGY_BUILD_IN);
         }
         binding.btnGreen.setOnClickListener {
-            setDayNightMode(2)
+//            setDayNightMode(2)
+            SkinCompatManager.getInstance().loadSkin("green", SkinCompatManager.SKIN_LOADER_STRATEGY_BUILD_IN);
         }
 
         binding.btnPopDialog.setOnClickListener {
 
+        }
+        binding.btnProDialog.setOnClickListener {
+            showProgressDialog(com.cb.mvvmbaselibrary.R.string.loading)
         }
 
         binding.btnWarmingDialog.setOnClickListener {
@@ -49,13 +56,16 @@ class MainActivity : BaseVmActivity<MainViewModel, ActivityMainBinding>() {
     }
 
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Logger.d(TAG, "1111111111111111111111111111")
+    }
+
 
     override fun observe() {
         super.observe()
     }
 }
-
-
 
 //class MainActivity : AppCompatActivity() {
 //    lateinit var binding: ActivityMainBinding

@@ -63,4 +63,5 @@ dependencies {
         }
     }
     implementation project(':mvvmBaseLibrary')
+    implementation 'com.github.littlefogcat:skin-support:4.0.7'
 }
